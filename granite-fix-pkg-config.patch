@@ -1,0 +1,12 @@
+diff -ruN granite-0.5.old/cmake/FindGObjectIntrospection.cmake granite-0.5/cmake/FindGObjectIntrospection.cmake
+--- granite-0.5.old/cmake/FindGObjectIntrospection.cmake	2018-08-02 12:24:41.676042077 +0100
++++ granite-0.5/cmake/FindGObjectIntrospection.cmake	2018-08-02 12:27:10.377364608 +0100
+@@ -18,7 +18,7 @@
+ 
+ macro(_GIR_GET_PKGCONFIG_VAR _outvar _varname)
+   execute_process(
+-    COMMAND ${PKG_CONFIG_EXECUTABLE} --variable=${_varname} gobject-introspection-1.0
++    COMMAND ${PKG_CONFIG_EXECUTABLE} --define-variable=girdir=/app/share/gir-1.0 --define-variable=typelibdir=/app/lib/girepository-1.0 --variable=${_varname} gobject-introspection-1.0
+     OUTPUT_VARIABLE _result
+     RESULT_VARIABLE _null
+   )
