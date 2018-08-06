@@ -1,0 +1,14 @@
+diff -ruN granite-0.5.old/cmake/FindGObjectIntrospection.cmake granite-0.5/cmake/FindGObjectIntrospection.cmake
+--- granite-0.5.old/cmake/FindGObjectIntrospection.cmake	2018-08-02 12:24:41.676042077 +0100
++++ granite-0.5/cmake/FindGObjectIntrospection.cmake	2018-08-06 15:08:42.349192556 +0100
+@@ -43,8 +43,8 @@
+     _gir_get_pkgconfig_var(INTROSPECTION_SCANNER "g_ir_scanner")
+     _gir_get_pkgconfig_var(INTROSPECTION_COMPILER "g_ir_compiler")
+     _gir_get_pkgconfig_var(INTROSPECTION_GENERATE "g_ir_generate")
+-    _gir_get_pkgconfig_var(INTROSPECTION_GIRDIR "girdir")
+-    _gir_get_pkgconfig_var(INTROSPECTION_TYPELIBDIR "typelibdir")
++    set(INTROSPECTION_GIRDIR "/app/share/gir-1.0")
++    set(INTROSPECTION_TYPELIBDIR "/app/lib/girepository-1.0")
+     set(INTROSPECTION_CFLAGS "${_pc_gir_CFLAGS}")
+     set(INTROSPECTION_LIBS "${_pc_gir_LIBS}")
+   endif()
